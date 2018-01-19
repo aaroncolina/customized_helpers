@@ -36,12 +36,9 @@ function filter_array_by_field($main_array, $filter=array()){
 		$result[] = $var;
 		if(isset($filter) && is_array($filter)){
 			foreach($filter as $filter_name => $filter_value){
-				// $var[$filter_name] = (is_null($var[$filter_name])? '': $var[$filter_name]);
-			   	if($var[$filter_name] != $filter[$filter_name]){
-
+			   	if(strpos($var[$filter_name], $filter[$filter_name]) === false){
 			   		$result = null;
-
-			   	} 
+			   	}
 			}
 		}
 	    return $result;
