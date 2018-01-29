@@ -36,7 +36,7 @@ function filter_array_by_field($main_array, $filter=array()){
 		$result[] = $var;
 		if(isset($filter) && is_array($filter)){
 			foreach($filter as $filter_name => $filter_value){
-			   	if(strpos($var[$filter_name], $filter[$filter_name]) === false){
+			   	if(strpos(strtoupper($var[$filter_name]), strtoupper($filter[$filter_name])) === false){
 			   		$result = null;
 			   	}
 			}
